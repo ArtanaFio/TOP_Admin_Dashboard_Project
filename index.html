@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOP - Admin Dashboard</title>
     <link rel="stylesheet" href="Assets/CSS/index.css">
+    <script src="Assets/JS/index.js" defer></script>
 </head>
 <body>
     <div class="main-grid">
@@ -14,28 +15,28 @@
                 <h1>Dashboard</h1>
             </div>
             <ul class="list-one">
-                <li><img src="Assets/Images/home.svg" alt="Home Icon"><p>Home</p></li>
-                <li><img src="Assets/Images/profile.svg" alt="Profile Icon"><p>Profile</p></li>
-                <li><img src="Assets/Images/messages.svg" alt="Messages Icon"><p>Messages</p></li>
-                <li><img src="Assets/Images/history.svg" alt="History Icon"><p>History</p></li>
-                <li><img src="Assets/Images/tasks.svg" alt="Tasks Icon"><p>Tasks</p></li>
-                <li><img src="Assets/Images/groups.svg" alt="Communities Icon"><p>Communities</p></li>
+                <li id="home" class="selections"><img src="Assets/Images/home.svg" alt="Home Icon" class="house white-icons"><p>Home</p></li>
+                <li id="profile" class="selections"><img src="Assets/Images/profile.svg" alt="Profile Icon" class="avatar white-icons"><p>Profile</p></li>
+                <li id="messages" class="selections"><img src="Assets/Images/messages.svg" alt="Messages Icon" class="mail white-icons"><p>Messages</p></li>
+                <li id="history" class="selections"><img src="Assets/Images/history.svg" alt="History Icon" class="clock white-icons"><p>History</p></li>
+                <li id="tasks" class="selections"><img src="Assets/Images/tasks.svg" alt="Tasks Icon" class="checkmark white-icons"><p>Tasks</p></li>
+                <li id="communities" class="selections"><img src="Assets/Images/groups.svg" alt="Communities Icon" class="group white-icons"><p>Communities</p></li>
             </ul>
             <ul class="list-two">
-                <li><img src="Assets/Images/settings.svg" alt="Settings Icon">Settings</li>
-                <li><img src="Assets/Images/support.svg" alt="Support Icon">Support</li>
-                <li><img src="Assets/Images/privacy.svg" alt="Privacy Icon">Privacy</li>
+                <li id="settings" class="selections"><img src="Assets/Images/settings.svg" alt="Settings Icon" class="gear white-icons">Settings</li>
+                <li id="support" class="selections"><img src="Assets/Images/support.svg" alt="Support Icon" class="question white-icons">Support</li>
+                <li id="privacy" class="selections"><img src="Assets/Images/privacy.svg" alt="Privacy Icon" class="shield white-icons">Privacy</li>
             </ul>
         </div>
         <div class="content-space">
             <header>
                 <div class="top-header">
                     <div class="search-box">
-                        <img src="Assets/Images/search.svg" alt="Search Icon" class="svg">
-                        <div class="search-bar"></div>
+                        <img src="Assets/Images/search.svg" alt="Search Icon" id="search" class="svg header-svg">
+                        <input type="search" class="search-bar"></input>
                     </div>
                     <div class="notifications-box">
-                        <img src="Assets/Images/bell.svg" alt="Notifications Icon" class="bell svg">
+                        <img src="Assets/Images/bell.svg" alt="Notifications Icon" id="notifications" class="bell svg header-svg">
                         <img src="Assets/Images/green-cactus.png" alt="Cactus Profile Image" class="mini-profile">
                         <p class="username">Jane Doe</p>
                     </div>
@@ -60,28 +61,70 @@
                     <p>Your Projects</p>
                     <div class="project-cards">
                         <div class="card">
-                            <p class="card-title">Super Cool Project</p>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi harum iusto non ullam assumenda dolores.</p>
+                            <div class="card-text">
+                                <p class="card-title">Super Cool Project</p>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi harum iusto non ullam assumenda dolores.</p>
+                            </div>
+                            <div class="action-icons">
+                                <img src="Assets/Images/star.svg" alt="Star Icon" class="star dark-icons">
+                                <img src="Assets/Images/eye.svg" alt="Eye Icon" class="eye dark-icons">
+                                <img src="Assets/Images/share.svg" alt="Share Icon" class="share dark-icons">
+                            </div>
                         </div>
                         <div class="card">
-                            <p class="card-title">Cool Project</p>
-                            <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, molestiae distinctio. Qui facere, earum incidunt distinctio consequatur corporis odit ratione!</p>
+                            <div class="card-text">
+                                <p class="card-title">Cool Project</p>
+                                <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, molestiae distinctio. Qui facere, earum incidunt distinctio consequatur corporis odit ratione!</p>
+                            </div>
+                            <div class="action-icons">
+                                <img src="Assets/Images/star.svg" alt="Star Icon" class="star dark-icons">
+                                <img src="Assets/Images/eye.svg" alt="Eye Icon" class="eye dark-icons">
+                                <img src="Assets/Images/share.svg" alt="Share Icon" class="share dark-icons">
+                            </div>
                         </div>
                         <div class="card">
-                            <p class="card-title">Impossible App</p>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cupiditate?</p>
+                            <div class="card-text">
+                                <p class="card-title">Impossible App</p>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cupiditate?</p>
+                            </div>
+                            <div class="action-icons">
+                                <img src="Assets/Images/star.svg" alt="Star Icon" class="star dark-icons">
+                                <img src="Assets/Images/eye.svg" alt="Eye Icon" class="eye dark-icons">
+                                <img src="Assets/Images/share.svg" alt="Share Icon" class="share dark-icons">
+                            </div>
                         </div>
                         <div class="card">
-                            <p class="card-title">Easy Peasy App</p>
-                            <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore est excepturi at eaque voluptate dolor iste officia, ex aperiam incidunt.</p>
+                            <div class="card-text">
+                                <p class="card-title">Easy Peasy App</p>
+                                <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore est excepturi at eaque voluptate dolor iste officia, ex aperiam incidunt.</p>
+                            </div>
+                            <div class="action-icons">
+                                <img src="Assets/Images/star.svg" alt="Star Icon" class="star dark-icons">
+                                <img src="Assets/Images/eye.svg" alt="Eye Icon" class="eye dark-icons">
+                                <img src="Assets/Images/share.svg" alt="Share Icon" class="share dark-icons">
+                            </div>
                         </div>
                         <div class="card">
-                            <p class="card-title">Ad Blocker</p>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reiciendis aliquam recusandae harum libero illum.</p>
+                            <div class="card-text">
+                                <p class="card-title">Ad Blocker</p>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, reiciendis aliquam recusandae harum libero illum.</p>
+                            </div>
+                            <div class="action-icons">
+                                <img src="Assets/Images/star.svg" alt="Star Icon" class="star dark-icons">
+                                <img src="Assets/Images/eye.svg" alt="Eye Icon" class="eye dark-icons">
+                                <img src="Assets/Images/share.svg" alt="Share Icon" class="share dark-icons">
+                            </div>
                         </div>
                         <div class="card">
-                            <p class="card-title">Money Maker</p>
-                            <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi accusamus voluptates aliquam ipsam ullam recusandae, enim sapiente fugit voluptatibus. Architecto!</p>
+                            <div class="card-text">
+                                <p class="card-title">Money Maker</p>
+                                <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi accusamus voluptates aliquam ipsam ullam recusandae, enim sapiente fugit voluptatibus. Architecto!</p>
+                            </div>
+                            <div class="action-icons">
+                                <img src="Assets/Images/star.svg" alt="Star Icon" class="star dark-icons">
+                                <img src="Assets/Images/eye.svg" alt="Eye Icon" class=" eye dark-icons">
+                                <img src="Assets/Images/share.svg" alt="Share Icon" class=" share dark-icons">
+                            </div>
                         </div>
                     </div>
                 </div>

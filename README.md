@@ -32,3 +32,41 @@ Step 5: Some tips!
 - Don’t forget to push your finished dashboard to GitHub. Use GitHub Pages to publish it to the world!
 Step 6: Section feedback
 - Before you move on, we would love it if you could submit your feedback on the Intermediate HTML and CSS course.
+
+CREDITS
+
+All SVG icons:
+- Source: Material Symbols (Google), https://fonts.google.com/icons
+
+CSS Filter Generator to Convert From Black to Target Hex Color:
+- Source: Codepen, https://codepen.io/sosuke/pen/Pjoqqp
+
+Fonts:
+- Name: Maven Pro
+- Source: Google Fonts, https://fonts.google.com/specimen/Maven+Pro
+- Creator: Joe Prince
+
+- Name: Monteserrat
+- Source: Google Fonts, https://fonts.google.com/specimen/Montserrat
+- Creators: Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly
+
+- Name: Caveat
+- Source: Google Fonts, https://fonts.google.com/specimen/Caveat
+- Creator: Imallari Type
+
+- Name: Pacifico
+- Source: Google Fonts, https://fonts.google.com/specimen/Pacifico
+- Creators:Vernon Adams, Jacques Le Bailly, Botjo Nikoltchev, Ani Petrova
+
+Photos (not SVG)
+- Name/ File: blue-cactus.png
+- Creator: Niada Niederhauser Roble
+
+- Name/ File: green-cactus.png
+- Creator: Niada Niederhauser Roble
+
+- Name/ File: lilac-cactus.png
+- Creator: Niada Niederhauser Roble
+
+- Name/ File: yellow-cactus.png
+- Creator: Niada Niederhauser Roble

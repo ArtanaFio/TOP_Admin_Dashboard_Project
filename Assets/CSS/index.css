@@ -6,8 +6,6 @@ Montserrat: sans serif; larger, very easy to read
 Maven Pro: sans serif; slightly more stylistic
 */
 
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -79,6 +77,11 @@ ul {
     font-weight: bold;
 }
 
+#sidebar li:hover {
+    color: #67e8f9;
+    text-decoration: underline;
+}
+
 .content-space {
     background-color: var(--main-color);
     color: var(--shadow);
@@ -119,6 +122,11 @@ header {
     border-radius: 50px;
     height: 35px;
     align-self: center;
+    border: none;
+    padding-left: 1rem;
+    font-size: 0.65rem;
+    font-family: "Montserrat";
+    color: var(--shadow);
 }
 
 .notifications-box {
@@ -141,6 +149,10 @@ header {
     height: 40px;
     width: 40px;
     border-radius: 50px;
+}
+
+.mini-profile:hover {
+    border: 2px solid deeppink;
 }
 
 .bottom-header {
@@ -196,6 +208,11 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: white;
+    color:#38bdf8;
+}
+
 main {
     background-color: transparent;
     display: grid;
@@ -233,6 +250,9 @@ main > * > p:first-child {
 
 .card {
     border-left: 10px solid #0ea5e9;
+    display: grid;
+    gap: 2px;
+    grid-template-rows: 2fr 1fr;
 }
 
 .card-title {
@@ -244,6 +264,18 @@ main > * > p:first-child {
 .card-description {
     font-size: 0.55rem;
     color: #0ea5e9;
+}
+
+.action-icons {
+    align-self: end;
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.action-icons *{
+    filter: invert(49%) sepia(96%) saturate(521%) hue-rotate(156deg) brightness(92%) contrast(99%);
 }
 
 .announcements {
@@ -295,4 +327,8 @@ main > * > p:first-child {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.card:hover, .list-item:hover, .account:hover {
+    background-color: #e0f2fe;
 }
