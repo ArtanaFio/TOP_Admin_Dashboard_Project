@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--name="viewport" tells the browser to control the user's visible area of a webpage
+            It tells the browswer how to control the page's dimensions and scaling-->
+
+        <!--width=device-width tells the browser to use the device's screen width as the 
+            page's width-->
+
+        <!--initial-scale=1.0 tells the browser to set the initial zoom level when the page is
+            first loaded-->
+        <title>Using CSS to Make Cactus</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .canvas {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /*background: honeydew;*/
+                width: 100%;
+                height: 100vh;
+                background: rgb(215, 187, 247);
+            }
+
+            .circle {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80vmin;
+                height: 80vmin;
+                border-radius: 50%;
+                /*background: rgb(187, 247, 187);*/
+            }
+
+            .pot {
+                position: absolute;
+                border-bottom: 25vmin solid rgb(184, 150, 134)/*rgb(80, 45, 45)*/;
+                border-left: 7vmin solid transparent;
+                border-right: 7vmin solid transparent;
+                height: 0;
+                width: 40vmin;
+                bottom: 15vmin; /* This moved the trapazoid down, similar to margin-bottom */
+                transform: rotate(180deg); /* Why not just change border-bottom to border-top? */
+                border-radius: 3vmin; /* Only rounds out the top edges */
+
+            }
+
+            .pot::after {
+                content:"";
+                position: absolute;
+                width: 26vmin;
+                height: 1vmin;
+                background: black;
+            }
+
+            .eyes {
+                position: absolute;
+                width: 4vmin;
+                height: 4vmin;
+                border-radius: 50%;
+                background: black; /* At this point, there is only one black circle in the bottom-right corner */
+                bottom: -15vmin; /* This pushes the circle up */
+                right: 18vmin; /* This pushes the circle to the right */
+                box-shadow: 13vmin 0 black; /* This created the left eye */
+                animation: blink 3.5s infinite; /* for this to work, we need @keyframes */
+            }
+
+            @keyframes blink {
+                0% {transform: scale(1, 0.1);}
+                10% {transform: scale(1,1);}
+            }
+            
+            .reflection {
+                position: absolute;
+                width: 1vmin;
+                height: 1vmin;
+                border-radius: 50%;
+                background: white;
+                bottom: 1vmin;
+                left: 1vmin;
+                box-shadow: 13vmin 0 white;
+            }
+
+            .cheeks {
+                position: absolute;
+                width: 5vmin;
+                height: 5vmin/*2.5vmin*/;
+                top: 5vmin/*8vmin*/;
+                left: 2vmin;
+                background: rgb(255, 0, 0)/*hotpink*/;
+                border-radius: 50%;
+                opacity: 50%;
+                box-shadow: 16vmin 0 rgb(255, 0, 0)/*hotpink*/;
+            }
+
+            .mouth {
+                position: absolute;
+                width: 4vmin;
+                height: 4vmin;
+                top: 8vmin; /* top and left positions the mouth towards the middle */
+                left: 10vmin;
+                border-bottom: 1vmin solid black;
+                border-radius: 25%/*50%*/; /* This gives the rectangle the crescent shape */
+                background: black/*transparent*/; /* not sure what this does */
+            }
+
+            .cactus {
+                position: absolute;
+                width: 17vmin;
+                height: 30vmin;
+                top: 15vmin;
+                left: 25vmin;
+                border-radius: 45%;
+                background: rgb(146, 205, 50)/*green*/;
+                border: 1vmin solid rgb(90, 128, 29)/*rgb(1, 53, 1)*/;
+            }
+
+            .cactus::before { /* This creates the right-side crease inside the cactus */
+                content: "";
+                position: absolute;
+                width: 5vmin;
+                height: 30vmin;
+                left: 6vmin;
+                background: transparent;
+                border-radius: 50%;
+                border-right: 1vmin solid rgb(90, 128, 29)/* rgb(7, 88, 7)*/;
+            }
+
+            .cactus::after {
+                content: "";
+                position: absolute;
+                width: 5vmin;
+                height: 30vmin;
+                right: 6vmin;
+                background: transparent;
+                border-radius: 50%;
+                border-left: 1vmin solid rgb(90, 128, 29)/* rgb(7, 88, 7)*/;
+            }
+
+            .small-cactus {
+                position: absolute;
+                width: 17vmin;
+                height: 20vmin;
+                top: 25vmin;
+                right: 28vmin;
+                background: rgb(63, 102, 0)/*green*/;
+                border-radius: 45%;
+                border: 1vmin solid rgb(90, 128, 29)/*rgb(1, 53, 1)*/;
+            }
+
+            .small-cactus::before {
+                content: "";
+                position: absolute;
+                width: 5vmin;
+                height: 20vmin;
+                left: 6vmin;
+                background: transparent;
+                border-radius: 50%;
+                border-right: 1vmin solid rgb(36, 58, 0) /*rgb(7, 88, 7)*/;
+            }
+
+            .small-cactus::after {
+                content: "";
+                position: absolute;
+                width: 5vmin;
+                height: 20vmin;
+                right: 6vmin;
+                background: transparent;
+                border-radius: 50%;
+                border-left: 1vmin solid rgb(36, 58, 0)/*rgb(7, 88, 7)*/;
+            }
+
+            .pricks {
+                position: absolute;
+                width: 0;
+                height: 0;
+                bottom: 20vmin;
+                left: 1vmin;
+                border-left: 0.5vmin solid transparent;
+                border-right: 0.5vmin solid transparent;
+                border-bottom: 3vmin solid rgb(90, 128, 29)/*rgb(7, 88, 7)*/;
+                transform: rotate(-45deg);
+
+            }
+
+            .pricks::before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 5vmin;
+                left: 9vmin;
+                border-left: 0.5vmin solid transparent;
+                border-right: 0.5vmin solid transparent;
+                border-bottom: 3vmin solid rgb(90, 128, 29)/*rgb(7, 88, 7)*/;
+                transform: rotate(90deg);
+            }
+
+            .pricks::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 9vmin;
+                left: -9vmin;
+                border-left: 0.5vmin solid transparent;
+                border-right: 0.5vmin solid transparent;
+                border-bottom: 3vmin solid rgb(90, 128, 29)/*rgb(7, 88, 7)*/;
+            }
+
+            .small-pricks {
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 5vmin;
+                left: 1vmin;
+                border-left: 0.5vmin solid transparent;
+                border-right: 0.5vmin solid transparent;
+                border-bottom: 3vmin solid rgb(36, 58, 0)/*rgb(7, 88, 7)*/;
+                transform: rotate(-45deg);
+            }
+
+            .small-pricks::before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 10vmin;
+                left: 8vmin;
+                border-left: 0.5vmin solid transparent;
+                border-right: 0.5vmin solid transparent;
+                border-bottom: 3vmin solid rgb(36, 58, 0)/*rgb(7, 88, 7)*/;
+                transform: rotate(90deg);
+            }
+        </style>
+    </head>
+    <body>
+        <!--https://codepen.io/codeanddream/pen/MWjeVgB is the source code-->
+        <div class="canvas">
+            <div class="circle">
+                <div class="cactus">
+                    <div class="pricks"></div>
+                </div>
+                <div class="small-cactus">
+                    <div class="small-pricks"></div>
+                </div>
+                <div class="pot">
+                    <div class="eyes">
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="cheeks"></div>
+                    <div class="mouth"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
